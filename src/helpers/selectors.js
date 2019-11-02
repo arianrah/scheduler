@@ -5,7 +5,6 @@ export function getAppointmentsForDay(state, day) {
   for (let id of filteredDays.appointments) {
     appointments.push(state.appointments[id])
   }
-  // console.log(appointments)
     return appointments;
 }
 
