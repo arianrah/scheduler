@@ -45,7 +45,7 @@ export default function Appointment(props) {
     transition(CONFIRM)
   }
 
-  function confirm() {
+  function destroy() {
     transition(DELETE, true)
     props.cancelInterview(props.id)
     .then(()=>{
@@ -85,7 +85,7 @@ export default function Appointment(props) {
         {mode === CONFIRM && (
         <Confirm
           onCancel={back}
-          onConfirm={confirm}
+          onConfirm={destroy}
         />
       )}
         {mode === DELETE && <Status message='Deleting' />}
@@ -99,12 +99,14 @@ export default function Appointment(props) {
           />
         )}
         {mode === ERRCREATE && (
-          <Error message='Could not create appointment'
+          <Error 
+            message='Could not create appointment'
             onClose={back}
           />
         )}
         {mode === ERRDELETE && (
-          <Error message='Could not delete appointment'
+          <Error 
+            message='Could not delete appointment'
             onClose={back}
           />
         )}
