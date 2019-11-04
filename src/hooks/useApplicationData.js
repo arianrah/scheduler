@@ -63,7 +63,7 @@ export default function useApplicationData() {
       }
       case SUB_SPOT: {
         const days = state.days.map(r => {
-          if (r.name !== day) {
+          if (r.name !== state.day) {
             return r;
           }
           return { ...r, spots: r.spots - 1 };
