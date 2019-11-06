@@ -5,18 +5,17 @@
 $appointment-height: 11rem;
 
 .appointment {
-  
   &__add {
     min-height: $appointment-height;
     padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    &:last-of-type {
-      display: none;
-    }
-    
+
+    // &:last-of-type {
+    //   display: none;
+    // }
+
     &-button {
       @include button-inactive--opacity;
 
