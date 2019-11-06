@@ -30,3 +30,7 @@ npm run storybook
 ```sh
 npm run cypress
 ```
+
+## Screenshots
+
+![1.](./screenshots/ss_1.png)
