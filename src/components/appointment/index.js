@@ -8,6 +8,7 @@ import Status from "components/appointment/Status";
 import Confirm from "components/appointment/Confirm";
 import useVisualMode from "hooks/useVisualMode";
 import Error from "components/appointment/Error";
+
 export default function Appointment(props) {
   const DELETE = "DELETE";
   const CONFIRM = "CONFIRM";
@@ -56,10 +57,11 @@ export default function Appointment(props) {
 
   function edit() {
     transition(EDIT);
+    // console.log(props.interview.student)
   }
 
   return (
-    <>
+    <React.Fragment>
       <article className="appointment"></article>
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
@@ -92,6 +94,6 @@ export default function Appointment(props) {
       {mode === ERRDELETE && (
         <Error message="Could not delete appointment" onClose={back} />
       )}
-    </>
+    </React.Fragment>
   );
 }

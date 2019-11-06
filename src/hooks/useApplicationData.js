@@ -14,7 +14,11 @@ const SET_INTERVIEW = "SET_INTERVIEW";
 const NULL_INTERVIEW = "NULL_INTERVIEW";
 const ADD_SPOT = "ADD_SPOT";
 const SUB_SPOT = "SUB_SPOT";
-
+const gets = Promise.all([
+  axios.get("/api/days"),
+  axios.get("/api/appointments"),
+  axios.get("/api/interviewers")
+]);
 export default function useApplicationData() {
   let [state, dispatch] = useReducer(reducer, initialState);
 
@@ -74,11 +78,7 @@ export default function useApplicationData() {
   }
 
   useEffect(() => {
-    Promise.all([
-      axios.get("/api/days"),
-      axios.get("/api/appointments"),
-      axios.get("/api/interviewers")
-    ]).then(all => {
+    gets.then(all => {
       dispatch({
         type: SET_APPLICATION_DATA,
         days: all[0].data,
