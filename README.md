@@ -34,3 +34,5 @@ npm run cypress
 ## Screenshots
 
 ![1.](./screenshots/ss_1.png)
+![1.](./screenshots/ss_2.png)
+![1.](./screenshots/ss_3.png)
