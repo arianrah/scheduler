@@ -44,7 +44,7 @@
     "@testing-library/react": "^8.0.7",
     "babel-loader": "^8.0.5",
     "gulp-sass": "^3.1.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.9.0"
   },
